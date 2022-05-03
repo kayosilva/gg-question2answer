@@ -34,10 +34,11 @@
 	define('QA_MYSQL_PORT', '3306');
 */
 
-	define('QA_MYSQL_HOSTNAME', '127.0.0.1');
-	define('QA_MYSQL_USERNAME', 'your-mysql-username');
-	define('QA_MYSQL_PASSWORD', 'your-mysql-password');
-	define('QA_MYSQL_DATABASE', 'your-mysql-db-name');
+define('QA_MYSQL_HOSTNAME', getenv('MYSQL_HOST'));
+define('QA_MYSQL_PORT', getenv('MYSQL_PORT'));
+define('QA_MYSQL_USERNAME', getenv('MYSQL_USER'));
+define('QA_MYSQL_PASSWORD', getenv('MYSQL_PASS'));
+define('QA_MYSQL_DATABASE', getenv('MYSQL_DB'));
 
 /*
 	Ultra-concise installation instructions:
@@ -61,7 +62,7 @@
 	MySQL database, or to include the Question2Answer tables in an existing MySQL database.
 */
 
-	define('QA_MYSQL_TABLE_PREFIX', 'qa_');
+define('QA_MYSQL_TABLE_PREFIX', 'qa_');
 
 /*
 	If you wish, you can define QA_MYSQL_USERS_PREFIX separately from QA_MYSQL_TABLE_PREFIX.
@@ -129,7 +130,7 @@
 	effect can now be achieved in plugins by using function overrides.
 */
 
-	define('QA_EXTERNAL_USERS', false);
+define('QA_EXTERNAL_USERS', false);
 
 /*
 	Out-of-the-box WordPress 3.x integration - to integrate with your WordPress site and user
@@ -188,13 +189,13 @@
 	bottom of every Question2Answer page.
 */
 
-	define('QA_HTML_COMPRESSION', false);
-	define('QA_MAX_LIMIT_START', 19999);
-	define('QA_IGNORED_WORDS_FREQ', 10000);
-	define('QA_ALLOW_UNINDEXED_QUERIES', false);
-	define('QA_OPTIMIZE_DISTANT_DB', false);
-	define('QA_PERSISTENT_CONN_DB', false);
-	define('QA_DEBUG_PERFORMANCE', false);
+define('QA_HTML_COMPRESSION', false);
+define('QA_MAX_LIMIT_START', 19999);
+define('QA_IGNORED_WORDS_FREQ', 10000);
+define('QA_ALLOW_UNINDEXED_QUERIES', false);
+define('QA_OPTIMIZE_DISTANT_DB', false);
+define('QA_PERSISTENT_CONN_DB', false);
+define('QA_DEBUG_PERFORMANCE', false);
 
 /*
 	And lastly... if you want to, you can predefine any constant from qa-include/db/maxima.php in
